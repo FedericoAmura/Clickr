@@ -1,0 +1,8 @@
+{
+  "name": "clickr",
+  "app_id": "ac45fe70",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
