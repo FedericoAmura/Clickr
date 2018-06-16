@@ -6,9 +6,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
+import { ServicePage } from '../pages/service/service';
+import { PurchasePage } from '../pages/purchase/purchase';
+import { ButtonPage } from '../pages/button/button';
 import { TabsPage } from '../pages/tabs/tabs';
 
 Pro.init('ac45fe70', {
@@ -39,9 +39,9 @@ export class MyErrorHandler implements ErrorHandler {
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
+    ServicePage,
+    PurchasePage,
+    ButtonPage,
     TabsPage
   ],
   imports: [
@@ -51,9 +51,9 @@ export class MyErrorHandler implements ErrorHandler {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
+    ServicePage,
+    PurchasePage,
+    ButtonPage,
     TabsPage
   ],
   providers: [
