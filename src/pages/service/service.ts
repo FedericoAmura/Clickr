@@ -9,9 +9,9 @@ import { IonicPage, NavController } from 'ionic-angular';
 export class ServicePage {
 
   services = [
-    {icon: "leaf", name: "Coto", stars: 5},
-    {icon: "rose", name: "Jumbo", stars: 4},
-    {icon: "beer", name: "Noble repulgue", stars: 3}
+    {icon: "coto.png", name: "Coto", stars: 4.4},
+    {icon: "jumbo.png", name: "Jumbo", stars: 4.2},
+    {icon: "nobleRepulgue.png", name: "Noble repulgue", stars: 3.7}
   ];
 
   constructor(public navCtrl: NavController) {
