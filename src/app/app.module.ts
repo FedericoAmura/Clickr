@@ -6,10 +6,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { ServicePage } from '../pages/service/service';
-import { PurchasePage } from '../pages/purchase/purchase';
-import { ButtonPage } from '../pages/button/button';
-import { TabsPage } from '../pages/tabs/tabs';
 
 Pro.init('ac45fe70', {
   appVersion: '0.0.1'
@@ -38,11 +34,7 @@ export class MyErrorHandler implements ErrorHandler {
 
 @NgModule({
   declarations: [
-    MyApp,
-    ServicePage,
-    PurchasePage,
-    ButtonPage,
-    TabsPage
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -50,11 +42,7 @@ export class MyErrorHandler implements ErrorHandler {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    ServicePage,
-    PurchasePage,
-    ButtonPage,
-    TabsPage
+    MyApp
   ],
   providers: [
     StatusBar,

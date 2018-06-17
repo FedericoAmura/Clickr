@@ -9,7 +9,7 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let button of buttons">
-      <h2>Nombre: {{button.name}}</h2>
+      <h2>{{button.name}}</h2>
       <p>DSN: {{button.dsn}}</p>
       <ion-icon *ngIf="button.trigger" name="cart" item-end></ion-icon>
     </ion-item>
