@@ -9,13 +9,17 @@ import { IonicPage, NavController } from 'ionic-angular';
 export class ServicePage {
 
   services = [
-    {icon: "coto.png", name: "Coto", stars: 4.4},
-    {icon: "jumbo.png", name: "Jumbo", stars: 4.2},
-    {icon: "nobleRepulgue.png", name: "Noble repulgue", stars: 3.7}
+    {icon: "coto.png", name: "Coto", stars: 4.4, telephone: "0800-222-1234", orders: []},
+    {icon: "jumbo.png", name: "Jumbo", stars: 4.2, telephone: "0800-436-6452", orders: []},
+    {icon: "nobleRepulgue.png", name: "Noble repulgue", stars: 3.7, telephone: "0800-756-2524", orders: []}
   ];
 
   constructor(public navCtrl: NavController) {
 
+  }
+
+  public loadService(service) {
+    this.navCtrl.push('ServiceDetailPage', {service: service});
   }
 
 }
