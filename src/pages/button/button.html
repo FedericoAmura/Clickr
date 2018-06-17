@@ -8,7 +8,7 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let button of buttons">
+    <ion-item *ngFor="let button of buttons" (click)="loadButton(button)">
       <h2>{{button.name}}</h2>
       <p>DSN: {{button.dsn}}</p>
       <ion-icon *ngIf="button.trigger" name="cart" item-end></ion-icon>

@@ -1,0 +1,13 @@
+page-button-detail {
+  .flex-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-item {
+    margin: 8px;
+  }
+}

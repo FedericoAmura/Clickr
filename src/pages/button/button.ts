@@ -17,8 +17,13 @@ export class ButtonPage {
 
   }
 
+  public loadButton(button) {
+    this.navCtrl.push('ButtonDetailPage', {button: button});
+  }
+
   public addButton() {
-    console.log("apretamos el boton");
+    this.navCtrl.push('ButtonDetailPage',
+      {button: {name: "Nuevo boton", dsn: "xxxx xxxx xxxx xxxx", trigger: null}});
   }
 
 }
