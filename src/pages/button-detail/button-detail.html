@@ -12,8 +12,8 @@
     <img src="../../assets/imgs/dashbutton.png" class="flex-item">
     <div class="flex-item"><span>Nombre:</span> {{button.name}}</div>
     <div class="flex-item"><span>DSN:</span> {{button.dsn}}</div>
-    <div class="flex-item"><span>Vinculado a:</span> {{button.trigger}}</div>
-    <button ion-button block class="flex-item">Desvincular</button>
+    <div class="flex-item" *ngIf="button.trigger"><span>Vinculado a:</span> {{button.trigger}}</div>
+    <button ion-button block class="flex-item" *ngIf="button.trigger">Desvincular</button>
     <button ion-button block color="danger" class="flex-item">Eliminar</button>
   </div>
 </ion-content>
