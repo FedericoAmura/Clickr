@@ -13,8 +13,15 @@
     <div class="flex-item"><span>Nombre:</span> {{service.name}}</div>
     <div class="flex-item"><span>Telefono:</span> {{service.telephone}}</div>
     <div class="flex-item"><span>Puntuacion:</span> <ion-icon name="star" item-end small>{{service.stars}}</ion-icon></div>
-    <div class="flex-item flex-container" style="flex-grow: 1; justify-content: flex-start">
+    <div class="flex-item flex-container" style="flex-grow: 1; justify-content: flex-start; width: 100%;">
       <div class="flex-item"><span>Pedidos Programados</span></div>
+      <ion-list style="width: 100%;">
+        <ion-item *ngFor="let order of service.orders" style="width: 100%;">
+          <h2>{{order.name}}</h2>
+          <p>{{order.description}}</p>
+          <ion-icon name="trash" item-end></ion-icon>
+        </ion-item>
+      </ion-list>
     </div>
   </div>
 </ion-content>
