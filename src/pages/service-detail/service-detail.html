@@ -15,6 +15,7 @@
     <div class="flex-item"><span>Puntuacion:</span> <ion-icon name="star" item-end small>{{service.stars}}</ion-icon></div>
     <div class="flex-item flex-container" style="flex-grow: 1; justify-content: flex-start; width: 100%;">
       <div class="flex-item"><span>Pedidos Programados</span></div>
+      <p *ngIf="service.orders.length<1">Todavia no tienes ningun pedido programado</p>
       <ion-list style="width: 100%;">
         <ion-item *ngFor="let order of service.orders" style="width: 100%;">
           <ion-icon name="trash" item-start></ion-icon>
