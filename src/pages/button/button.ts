@@ -9,8 +9,8 @@ import { IonicPage, NavController } from 'ionic-angular';
 export class ButtonPage {
 
   buttons = [
-    {id: 1, name: "Boton alacena", dsn: "G030 MD04 9341 4C4M", trigger: "Coto - Compra semanal"},
-    {id: 2, name: "Boton lavadero", dsn: "G030 MD67 5844 73JR", trigger: null}
+    {id: 1, name: "Clickr alacena", dsn: "G030 MD04 9341 4C4M", trigger: "Coto - Compra semanal"},
+    {id: 2, name: "Clickr lavadero", dsn: "G030 MD67 5844 73JR", trigger: null}
   ];
 
   constructor(public navCtrl: NavController) {

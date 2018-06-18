@@ -11,7 +11,7 @@
     <ion-item *ngFor="let purchase of purchases">
       <h2>{{purchase.name}}</h2>
       <p>{{purchase.when}}</p>
-      <ion-icon name="trash" *ngIf="purchase.cancellable" item-end></ion-icon>
+      <ion-icon name="close-circle" *ngIf="purchase.cancellable" (click)="confirmDeletion(purchase.name)" item-end></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>

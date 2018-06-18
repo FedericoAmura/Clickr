@@ -14,11 +14,11 @@
     <div class="flex-item"><span>Telefono:</span> {{service.telephone}}</div>
     <div class="flex-item"><span>Puntuacion:</span> <ion-icon name="star" item-end small>{{service.stars}}</ion-icon></div>
     <div class="flex-item flex-container" style="flex-grow: 1; justify-content: flex-start; width: 100%;">
-      <div class="flex-item"><span>Pedidos Programados</span></div>
-      <p *ngIf="service.orders.length<1">Todavia no tienes ningun pedido programado</p>
+      <div class="flex-item"><span>Pedidos armados</span></div>
+      <p *ngIf="service.orders.length<1">Todavia no tienes ningun pedido armado</p>
       <ion-list style="width: 100%;">
         <ion-item *ngFor="let order of service.orders" style="width: 100%;">
-          <ion-icon name="trash" item-start></ion-icon>
+          <ion-icon name="trash" item-start (click)="confirmDeletion(order.name)"></ion-icon>
           <h2>{{order.name}}</h2>
           <p>{{order.description}}</p>
         </ion-item>

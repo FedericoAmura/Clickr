@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -10,11 +10,27 @@ export class ServiceDetailPage {
 
   service = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
     this.service = this.navParams.get('service');
   }
 
   public addOrder() {
-    
+
+  }
+
+  public confirmDeletion(button: string) {
+    let alert = this.alertCtrl.create({
+      title: "Confirmar eliminacion",
+      message: `Seguro que quiere eliminar el pedido "${button}"?`,
+      buttons: [
+        {
+          text: "Eliminar",
+        },
+        {
+          text: "Volver"
+        }
+      ]
+    });
+    alert.present();
   }
 }
