@@ -14,4 +14,7 @@ export class ServiceDetailPage {
     this.service = this.navParams.get('service');
   }
 
+  public addOrder() {
+    
+  }
 }
