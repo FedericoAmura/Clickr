@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { ServiceProvider } from "../../providers/service/service";
+
 @IonicPage()
 @Component({
   selector: 'page-service-detail',
@@ -10,8 +12,8 @@ export class ServiceDetailPage {
 
   service = {};
 
-  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
-    this.service = this.navParams.get('service');
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public serviceProvider: ServiceProvider) {
+    this.service = this.serviceProvider.getService(this.navParams.get('service'));
   }
 
   public addOrder() {
