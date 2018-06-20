@@ -8,8 +8,8 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let purchase of getPurchases()" (click)="loadPurchase(purchase.id)">
-      <h2>{{purchase.name}}</h2>
+    <ion-item *ngFor="let purchase of getPurchases()">
+      <h2 (click)="loadPurchase(purchase.id)">{{purchase.name}}</h2>
       <p>{{purchase.when}}</p>
       <ion-icon name="close-circle" *ngIf="purchase.cancellable" (click)="confirmDeletion(purchase)" item-end></ion-icon>
     </ion-item>

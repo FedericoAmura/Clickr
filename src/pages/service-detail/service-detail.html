@@ -17,13 +17,13 @@
       <div class="flex-item"><span>Pedidos armados</span></div>
       <p *ngIf="orders.length<1">Todavia no tienes ningun pedido armado</p>
       <ion-list style="width: 100%;">
-        <ion-item *ngFor="let order of orders" style="width: 100%;" (click)="loadOrder(order.id)">
+        <ion-item *ngFor="let order of orders" style="width: 100%;">
           <ion-icon name="trash" item-start (click)="confirmDeletion(order.name)"></ion-icon>
-          <h2>{{order.name}}</h2>
+          <h2 (click)="loadOrder(order.id)">{{order.name}}</h2>
           <p>{{order.description}}</p>
         </ion-item>
       </ion-list>
     </div>
-    <ion-fab right bottom><button ion-fab (click)="addOrder()"><ion-icon name="add"></ion-icon></button></ion-fab>
+    <ion-fab class="add" center bottom><button ion-fab (click)="addOrder()"><ion-icon name="add"></ion-icon></button></ion-fab>
   </div>
 </ion-content>
