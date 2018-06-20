@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 import { MyApp } from './app.component';
 import { ServiceProvider } from '../providers/service/service';
@@ -53,6 +54,7 @@ export class MyErrorHandler implements ErrorHandler {
   providers: [
     StatusBar,
     SplashScreen,
+    LocalNotifications,
     IonicErrorHandler,
     {provide: ErrorHandler, useClass: MyErrorHandler},
     ServiceProvider,
