@@ -17,7 +17,7 @@
       <div class="flex-item"><span>Pedidos armados</span></div>
       <p *ngIf="orders.length<1">Todavia no tienes ningun pedido armado</p>
       <ion-list style="width: 100%;">
-        <ion-item *ngFor="let order of orders" style="width: 100%;">
+        <ion-item *ngFor="let order of orders" style="width: 100%;" (click)="loadOrder(order.id)">
           <ion-icon name="trash" item-start (click)="confirmDeletion(order.name)"></ion-icon>
           <h2>{{order.name}}</h2>
           <p>{{order.description}}</p>

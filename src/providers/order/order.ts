@@ -1,16 +1,24 @@
-import { Storage } from '@ionic/storage';
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class OrderProvider {
 
   orders: Order[] = [
-    {id: 1, serviceId: 1, name: "Compra semanal", description: "Insumos basicos", price: 950},
-    {id: 2, serviceId: 1, name: "Alimento para frida", description: "Dog chow", price: 580},
-    {id: 3, serviceId: 3, name: "Docena simple", description: "6 carne y 6 JQ", price: 360}
+    {id: 1, serviceId: 1, name: "Compra semanal", description: "Insumos basicos", packs: [
+        {productId: 1, amount: 3},
+        {productId: 2, amount: 1},
+        {productId: 3, amount: 1}]},
+    {id: 2, serviceId: 1, name: "Alimento para frida", description: "Dog chow", packs: [
+        {productId: 4, amount: 1}]},
+    {
+      id: 3, serviceId: 3, name: "Docena simple", description: "6 carne y 6 JQ", packs: [
+        {productId: 5, amount: 6},
+        {productId: 5, amount: 6}
+      ]
+    }
   ];
 
-  constructor(private storage: Storage) {
+  constructor() {
 
   }
 
@@ -33,5 +41,10 @@ export class Order {
   serviceId: number;
   name: string;
   description: string;
-  price: number;
+  packs: Pack[];
+}
+
+export class Pack {
+  productId: number;
+  amount: number;
 }

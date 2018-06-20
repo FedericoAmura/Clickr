@@ -23,6 +23,10 @@ export class ServiceDetailPage {
 
   }
 
+  public loadOrder(orderId: number) {
+    this.navCtrl.push('OrderDetailPage', {order: orderId});
+  }
+
   public confirmDeletion(button: string) {
     let alert = this.alertCtrl.create({
       title: "Confirmar eliminacion",

@@ -10,6 +10,7 @@ import { MyApp } from './app.component';
 import { ServiceProvider } from '../providers/service/service';
 import { PurchaseProvider } from '../providers/purchase/purchase';
 import { OrderProvider } from '../providers/order/order';
+import { ProductProvider } from '../providers/product/product';
 
 Pro.init('ac45fe70', {
   appVersion: '0.0.1'
@@ -56,7 +57,8 @@ export class MyErrorHandler implements ErrorHandler {
     {provide: ErrorHandler, useClass: MyErrorHandler},
     ServiceProvider,
     PurchaseProvider,
-    OrderProvider
+    OrderProvider,
+    ProductProvider
   ]
 })
 export class AppModule {}

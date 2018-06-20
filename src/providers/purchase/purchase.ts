@@ -1,4 +1,3 @@
-import { Storage } from '@ionic/storage';
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -9,7 +8,7 @@ export class PurchaseProvider {
     {id: 2, name: "Coto - Compra semanal", serviceId: 1, status: "En camino", cancellable: true, when: "Hace 2 horas", delivery: null, from: "Sucursal Cabildo"}
   ];
 
-  constructor(private storage: Storage) {
+  constructor() {
 
   }
 

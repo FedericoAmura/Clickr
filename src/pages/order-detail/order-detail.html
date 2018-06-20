@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{order.name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="flex-container">
+  <div class="flex-container">
+    <img src="../../assets/imgs/{{service.icon}}" class="flex-item">
+    <div class="flex-item"><span>Descripcion:</span> {{order.description}}</div>
+    <div class="flex-item"><span>Costo total:</span> ${{cost}}</div>
+    <div class="flex-item flex-container" style="flex-grow: 1; justify-content: flex-start; width: 100%;">
+      <div class="flex-item"><span>Productos incluidos</span></div>
+      <p *ngIf="order.packs.length<1">Todavia no tienes ningun producto agregado</p>
+      <ion-list style="width: 100%;">
+        <ion-item *ngFor="let product of products" style="width: 100%;">
+          <ion-icon name="trash" item-start></ion-icon>
+          <h2>{{product.amount}} x {{product.name}}</h2>
+          <p>${{product.price}}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+    <ion-fab right bottom><button ion-fab (click)="addProduct()"><ion-icon name="add"></ion-icon></button></ion-fab>
+  </div>
+</ion-content>
