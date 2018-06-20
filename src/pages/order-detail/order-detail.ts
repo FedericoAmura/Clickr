@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
 
 import { Service, ServiceProvider } from "../../providers/service/service";
 import { Pack, Order, OrderProvider } from "../../providers/order/order";
@@ -17,7 +17,7 @@ export class OrderDetailPage {
   products: (Product&Pack)[];
   cost: number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public orderProvider: OrderProvider, public serviceProvider: ServiceProvider, public productProvider: ProductProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public orderProvider: OrderProvider, public serviceProvider: ServiceProvider, public productProvider: ProductProvider) {
     this.order = this.orderProvider.getOrder(this.navParams.get('order'));
     this.service = this.serviceProvider.getService(this.order.serviceId);
     this.products = this.order.packs.map(pack => {
@@ -28,6 +28,22 @@ export class OrderDetailPage {
 
   public addProduct() {
 
+  }
+
+  public confirmDeletion(product: string) {
+    let alert = this.alertCtrl.create({
+      title: "Confirmar eliminacion",
+      message: `Seguro que quiere eliminar el producto "${product}"?`,
+      buttons: [
+        {
+          text: "Eliminar",
+        },
+        {
+          text: "Volver"
+        }
+      ]
+    });
+    alert.present();
   }
 
 }
