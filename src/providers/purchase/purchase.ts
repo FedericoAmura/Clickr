@@ -47,6 +47,21 @@ export class PurchaseProvider {
     return this.purchases.filter(purchase => purchase.id === id)[0];
   }
 
+  public addPurchaseComidaFrida() {
+    let purchase: Purchase = {
+      id: 3,
+      name: "Comida para Frida",
+      serviceId: 1,
+      products: [{productId: 4, amount: 1}],
+      status: "Pendiente de confirmacion",
+      cancellable: true,
+      when: "Hace unos instantes",
+      delivery: null,
+      from: "Sucursal Cabildo"
+    };
+    this.purchases.unshift(purchase);
+  }
+
 }
 
 export class Purchase {

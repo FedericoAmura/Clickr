@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController, IonicPage, NavController } from 'ionic-angular';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 import { PurchaseProvider } from "../../providers/purchase/purchase";
 
@@ -10,7 +11,7 @@ import { PurchaseProvider } from "../../providers/purchase/purchase";
 })
 export class PurchasePage {
 
-  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public purchaseProvider: PurchaseProvider) {
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public localNotifications: LocalNotifications, public purchaseProvider: PurchaseProvider) {
 
   }
 
@@ -36,6 +37,16 @@ export class PurchasePage {
       ]
     });
     alert.present();
+  }
+
+  public agregarPedidoFrida() {
+    console.log("Agregamos el pedido de frida");
+    let notification = {
+      title: 'Nueva compra',
+      text: 'Comida para Frida desde Clickr Frida'
+    };
+    this.localNotifications.schedule(notification);
+    this.purchaseProvider.addPurchaseComidaFrida();
   }
 
 }
