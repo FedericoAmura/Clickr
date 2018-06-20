@@ -9,6 +9,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { ServiceProvider } from '../providers/service/service';
 import { PurchaseProvider } from '../providers/purchase/purchase';
+import { OrderProvider } from '../providers/order/order';
 
 Pro.init('ac45fe70', {
   appVersion: '0.0.1'
@@ -54,7 +55,8 @@ export class MyErrorHandler implements ErrorHandler {
     IonicErrorHandler,
     {provide: ErrorHandler, useClass: MyErrorHandler},
     ServiceProvider,
-    PurchaseProvider
+    PurchaseProvider,
+    OrderProvider
   ]
 })
 export class AppModule {}

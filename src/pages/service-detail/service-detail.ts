@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { ServiceProvider } from "../../providers/service/service";
+import { Service, ServiceProvider } from "../../providers/service/service";
+import { Order, OrderProvider } from "../../providers/order/order";
 
 @IonicPage()
 @Component({
@@ -10,10 +11,12 @@ import { ServiceProvider } from "../../providers/service/service";
 })
 export class ServiceDetailPage {
 
-  service = {};
+  service: Service;
+  orders: Order[];
 
-  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public serviceProvider: ServiceProvider) {
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public serviceProvider: ServiceProvider, public orderProvider: OrderProvider) {
     this.service = this.serviceProvider.getService(this.navParams.get('service'));
+    this.orders = this.orderProvider.getServiceOrders(this.service.id);
   }
 
   public addOrder() {

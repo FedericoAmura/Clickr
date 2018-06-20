@@ -5,14 +5,9 @@ import { Injectable } from '@angular/core';
 export class ServiceProvider {
 
   services: Service[] = [
-    {id: 1, icon: "coto.png", name: "Coto", stars: 4.4, telephone: "0800-222-1234", orders: [
-        {name: "Compra semanal", description: "Insumos basicos", price: 950},
-        {name: "Alimento para frida", description: "Dog chow", price: 580}
-      ]},
-    {id: 2, icon: "jumbo.png", name: "Jumbo", stars: 4.2, telephone: "0800-436-6452", orders: []},
-    {id: 3, icon: "nobleRepulgue.png", name: "Noble repulgue", stars: 3.7, telephone: "0800-756-2524", orders: [
-        {name: "Docena simple", description: "6 carne y 6 JQ", price: 360}
-      ]}
+    {id: 1, icon: "coto.png", name: "Coto", stars: 4.4, telephone: "0800-222-1234"},
+    {id: 2, icon: "jumbo.png", name: "Jumbo", stars: 4.2, telephone: "0800-436-6452"},
+    {id: 3, icon: "nobleRepulgue.png", name: "Noble repulgue", stars: 3.7, telephone: "0800-756-2524"}
   ];
 
   constructor(private storage: Storage) {
@@ -35,5 +30,4 @@ export class Service {
   name: string;
   stars: number;
   telephone: string;
-  orders: any[];
 }
