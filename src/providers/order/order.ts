@@ -4,14 +4,14 @@ import {Injectable} from '@angular/core';
 export class OrderProvider {
 
   orders: Order[] = [
-    {id: 1, serviceId: 1, name: "Compra semanal", description: "Insumos basicos", packs: [
+    {id: 1, serviceId: 1, name: "Compra semanal", description: "Insumos basicos", clickr: "Clickr alacena", packs: [
         {productId: 1, amount: 3},
         {productId: 2, amount: 1},
         {productId: 3, amount: 1}]},
-    {id: 2, serviceId: 1, name: "Alimento para frida", description: "Dog chow", packs: [
+    {id: 2, serviceId: 1, name: "Comida para Frida", description: "Dog chow", clickr: "Clickr Frida", packs: [
         {productId: 4, amount: 1}]},
     {
-      id: 3, serviceId: 3, name: "Docena simple", description: "6 carne y 6 JQ", packs: [
+      id: 3, serviceId: 3, name: "Docena simple", description: "6 carne y 6 JQ", clickr: null, packs: [
         {productId: 5, amount: 6},
         {productId: 5, amount: 6}
       ]
@@ -39,6 +39,7 @@ export class OrderProvider {
 export class Order {
   id: number;
   serviceId: number;
+  clickr: string;
   name: string;
   description: string;
   packs: Pack[];
