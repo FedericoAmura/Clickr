@@ -8,6 +8,7 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { ServiceProvider } from '../providers/service/service';
+import { PurchaseProvider } from '../providers/purchase/purchase';
 
 Pro.init('ac45fe70', {
   appVersion: '0.0.1'
@@ -52,7 +53,8 @@ export class MyErrorHandler implements ErrorHandler {
     SplashScreen,
     IonicErrorHandler,
     {provide: ErrorHandler, useClass: MyErrorHandler},
-    ServiceProvider
+    ServiceProvider,
+    PurchaseProvider
   ]
 })
 export class AppModule {}

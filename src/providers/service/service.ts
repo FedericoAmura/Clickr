@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ServiceProvider {
 
-  services = [
+  services: Service[] = [
     {id: 1, icon: "coto.png", name: "Coto", stars: 4.4, telephone: "0800-222-1234", orders: [
         {name: "Compra semanal", description: "Insumos basicos", price: 950},
         {name: "Alimento para frida", description: "Dog chow", price: 580}
@@ -27,4 +27,13 @@ export class ServiceProvider {
     return this.services.filter(service => service.id === id)[0];
   }
 
+}
+
+export class Service {
+  id: number;
+  icon: string;
+  name: string;
+  stars: number;
+  telephone: string;
+  orders: any[];
 }

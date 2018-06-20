@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AlertController, IonicPage, NavController } from 'ionic-angular';
 
+import { PurchaseProvider } from "../../providers/purchase/purchase";
+
 @IonicPage()
 @Component({
   selector: 'page-purchase',
@@ -8,19 +10,22 @@ import { AlertController, IonicPage, NavController } from 'ionic-angular';
 })
 export class PurchasePage {
 
-  purchases = [
-    {id: 1, name: "Coto - Compra semanal", status: "Entregado", cancellable: false, when: "2018/06/11 18:35:25"},
-    {id: 2, name: "Coto - Compra semanal", status: "En camino", cancellable: true, when: "Hace 2 horas"}
-  ];
-
-  constructor(public alertCtrl: AlertController, public navCtrl: NavController) {
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public purchaseProvider: PurchaseProvider) {
 
   }
 
-  public confirmDeletion(button: string) {
+  public getPurchases() {
+    return this.purchaseProvider.getPurchases();
+  }
+
+  public loadPurchase(purchaseId) {
+    this.navCtrl.push('PurchaseDetailPage', {purchase: purchaseId});
+  }
+
+  public confirmDeletion(purchase) {
     let alert = this.alertCtrl.create({
       title: "Cancelar compra",
-      message: `Seguro que quiere cancelar la compra "${button}"?`,
+      message: `Seguro que quiere cancelar la compra "${purchase.name}"?`,
       buttons: [
         {
           text: "Cancelar",
