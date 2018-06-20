@@ -22,8 +22,8 @@ export class ButtonPage {
   }
 
   public addButton() {
-    this.navCtrl.push('ButtonDetailPage',
-      {button: {name: "Nuevo boton", dsn: "xxxx xxxx xxxx xxxx", trigger: null}});
+    /*this.navCtrl.push('ButtonDetailPage',
+      {button: {name: "Nuevo boton", dsn: "xxxx xxxx xxxx xxxx", trigger: null}});*/
   }
 
 }
