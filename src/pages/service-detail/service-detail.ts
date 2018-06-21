@@ -27,13 +27,17 @@ export class ServiceDetailPage {
     this.navCtrl.push('OrderDetailPage', {order: orderId});
   }
 
-  public confirmDeletion(button: string) {
+  public confirmDeletion(order: Order) {
     let alert = this.alertCtrl.create({
       title: "Confirmar eliminacion",
-      message: `Seguro que quiere eliminar el pedido "${button}"?`,
+      message: `Seguro que quiere eliminar el pedido "${order.name}"?`,
       buttons: [
         {
           text: "Eliminar",
+          handler: () => {
+            this.orderProvider.removeOrder(order.id);
+            this.orders = this.orderProvider.getServiceOrders(this.service.id);
+          }
         },
         {
           text: "Volver"

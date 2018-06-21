@@ -47,6 +47,10 @@ export class PurchaseProvider {
     return this.purchases.filter(purchase => purchase.id === id)[0];
   }
 
+  public removePurchase(id: number) {
+    this.purchases = this.purchases.filter(purchase => purchase.id !== id);
+  }
+
   public addPurchaseComidaFrida() {
     let purchase: Purchase = {
       id: 3,

@@ -30,6 +30,9 @@ export class PurchasePage {
       buttons: [
         {
           text: "Cancelar",
+          handler: () => {
+            this.purchaseProvider.removePurchase(purchase.id);
+          }
         },
         {
           text: "Volver"

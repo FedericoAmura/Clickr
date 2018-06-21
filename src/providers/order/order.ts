@@ -34,6 +34,10 @@ export class OrderProvider {
     return this.orders.filter(order => order.serviceId === serviceId);
   }
 
+  public removeOrder(id: number) {
+    this.orders = this.orders.filter(order => order.id !== id);
+  }
+
 }
 
 export class Order {

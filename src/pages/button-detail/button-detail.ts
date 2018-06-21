@@ -8,19 +8,27 @@ import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angu
 })
 export class ButtonDetailPage {
 
-  button = {};
+  button = {
+    id: null,
+    name: null,
+    dsn: null,
+    trigger: null
+  };
 
   constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
     this.button = this.navParams.get('button');
   }
 
-  public confirmUnlink(trigger: string) {
+  public confirmUnlink() {
     let alert = this.alertCtrl.create({
       title: "Confirmar desvinculacion",
-      message: `Seguro que quiere desvincular el boton de "${trigger}"?`,
+      message: `Seguro que quiere desvincular el boton "${this.button.name}"?`,
       buttons: [
         {
           text: "Desvincular",
+          handler: () => {
+            this.unlinkButton();
+          }
         },
         {
           text: "Volver"
@@ -30,13 +38,13 @@ export class ButtonDetailPage {
     alert.present();
   }
 
-  public confirmDeletion(button: string) {
+  public confirmDeletion() {
     let alert = this.alertCtrl.create({
       title: "Confirmar eliminacion",
-      message: `Seguro que quiere eliminar el boton "${button}"?`,
+      message: `Seguro que quiere eliminar el boton "${this.button.name}"?`,
       buttons: [
         {
-          text: "Eliminar",
+          text: "Eliminar"
         },
         {
           text: "Volver"
@@ -44,5 +52,9 @@ export class ButtonDetailPage {
       ]
     });
     alert.present();
+  }
+
+  public unlinkButton() {
+    this.button.trigger = null;
   }
 }
