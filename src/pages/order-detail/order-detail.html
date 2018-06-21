@@ -18,7 +18,7 @@
       <p *ngIf="order.packs.length<1">Todavia no tienes ningun producto agregado</p>
       <ion-list style="width: 100%;">
         <ion-item *ngFor="let product of products" style="width: 100%;">
-          <ion-icon name="trash" item-start (click)="confirmDeletion(product.name)"></ion-icon>
+          <ion-icon name="trash" item-start (click)="confirmDeletion(product)"></ion-icon>
           <h2>{{product.amount}} x {{product.name}}</h2>
           <p>${{product.price}}</p>
         </ion-item>

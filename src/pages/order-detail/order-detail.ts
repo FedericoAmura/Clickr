@@ -30,13 +30,21 @@ export class OrderDetailPage {
 
   }
 
-  public confirmDeletion(product: string) {
+  public confirmDeletion(product: Product) {
     let alert = this.alertCtrl.create({
       title: "Confirmar eliminacion",
-      message: `Seguro que quiere eliminar el producto "${product}"?`,
+      message: `Seguro que quiere eliminar el producto "${product.name}"?`,
       buttons: [
         {
           text: "Eliminar",
+          handler: () => {
+            this.orderProvider.removeProduct(product.id, this.order.id);
+            this.order = this.orderProvider.getOrder(this.order.id);
+            this.products = this.order.packs.map(pack => {
+              return {...pack,...this.productProvider.getProduct(pack.productId)};
+            });
+            this.cost = this.products.reduce((sub, product) => sub+product.amount*product.price, 0);
+          }
         },
         {
           text: "Volver"

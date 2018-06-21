@@ -13,7 +13,7 @@ export class OrderProvider {
     {
       id: 3, serviceId: 3, name: "Docena simple", description: "6 carne y 6 JQ", clickr: null, packs: [
         {productId: 5, amount: 6},
-        {productId: 5, amount: 6}
+        {productId: 6, amount: 6}
       ]
     }
   ];
@@ -36,6 +36,11 @@ export class OrderProvider {
 
   public removeOrder(id: number) {
     this.orders = this.orders.filter(order => order.id !== id);
+  }
+
+  public removeProduct(productId: number, orderId: number) {
+    let order = this.orders.filter(order => order.id === orderId)[0];
+    order.packs = order.packs.filter(product => product.productId !== productId);
   }
 
 }
