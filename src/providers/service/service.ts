@@ -1,4 +1,3 @@
-import { Storage } from '@ionic/storage';
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -10,7 +9,7 @@ export class ServiceProvider {
     {id: 3, icon: "nobleRepulgue.png", name: "Noble repulgue", stars: 3.7, telephone: "0800-756-2524"}
   ];
 
-  constructor(private storage: Storage) {
+  constructor() {
 
   }
 
