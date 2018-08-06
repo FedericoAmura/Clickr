@@ -10,4 +10,4 @@ import { ButtonPage } from './button';
     IonicPageModule.forChild(ButtonPage),
   ],
 })
-export class ButtonDetailPageModule {}
+export class ButtonPageModule {}

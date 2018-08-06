@@ -10,4 +10,4 @@ import { PurchasePage } from './purchase';
     IonicPageModule.forChild(PurchasePage),
   ],
 })
-export class ButtonDetailPageModule {}
+export class PurchasePageModule {}

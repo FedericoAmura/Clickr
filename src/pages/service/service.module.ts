@@ -10,4 +10,4 @@ import { ServicePage } from './service';
     IonicPageModule.forChild(ServicePage),
   ],
 })
-export class ButtonDetailPageModule {}
+export class ServicePageModule {}
